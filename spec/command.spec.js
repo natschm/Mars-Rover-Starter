@@ -6,7 +6,14 @@ const Command = require('../command.js');
 describe("Command class", function() {
 
   it("throws error if command type is NOT passed into constructor as the first parameter", function() {
-    expect( function() { new Command();}).toThrow(new Error('Command type required.'));
+    expect( function() { new Command();}).toThrowError('Command type required.');
   });
 
+it("constructor sets command type", function() {
+  const command = new Command("TEST_COMMAND");
+  expect(command.commandType).toBe("TEST_COMMAND");
 });
+
+});
+
+// added lines 12-15 to code
