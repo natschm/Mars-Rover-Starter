@@ -1,10 +1,18 @@
 const Command = require('./command');
 
 class Message {
-   // Write code here!
    constructor(name, commands) {
-      this.name = name;
-      this.commands = commands || [];
+      if (typeof name !== 'undefined') {
+         this.name = name;
+      } else {
+         this.name = '';
+      }
+
+      if (Array.isArray(commands)) {
+         this.commands = commands;
+      } else {
+         this.commands = [];
+      }
    }
 }
 
